@@ -1,0 +1,35 @@
+{
+  "name": "@e11community/rollbar-dynamic-config",
+  "version": "1.0.0",
+  "description": "GitHub Action to discover microservices in a repository",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "package": "ncc build",
+    "all": "npm run build && npm run package",
+    "rebuild": "([ -d ./dist ] && rm -rf ./dist); ([ -d ./node_modules ] && rm -rf ./node_modules); NPM_CONFIG_UPDATE_NOTIFIER=false npm install --no-fund && tsc -p . && ncc build"
+  },
+  "keywords": [
+    "github-actions",
+    "rollbar",
+    "typescript"
+  ],
+  "author": "Engineering 11",
+  "repository": {
+    "url": "https://github.com/e11community/rollbar-dynamic-config",
+    "type": "git"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/exec": "^1.1.1",
+    "@actions/github": "^6.0.1",
+    "@google-cloud/secret-manager": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "@vercel/ncc": "^0.38.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3"
+  }
+}
