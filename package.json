@@ -1,6 +1,6 @@
 {
   "name": "@e11community/rollbar-dynamic-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GitHub Action to discover microservices in a repository",
   "main": "dist/main.js",
   "scripts": {
