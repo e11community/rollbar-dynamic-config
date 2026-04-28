@@ -1,6 +1,6 @@
 {
   "name": "@e11community/rollbar-dynamic-config",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "GitHub Action to generate the dynamic portions of Rollbar configuration",
   "main": "dist/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   ],
   "author": "Engineering 11",
   "repository": {
-    "url": "https://github.com/e11community/rollbar-dynamic-config",
+    "url": "git+https://github.com/e11community/rollbar-dynamic-config.git",
     "type": "git"
   },
   "license": "UNLICENSED",
