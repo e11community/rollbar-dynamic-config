@@ -13,5 +13,5 @@ inputs:
       for the project you want to emit Rollbar errors to
     required: true
 runs:
-  using: 'node22'
+  using: 'node24'
   main: 'dist/index.js'
