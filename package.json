@@ -1,13 +1,13 @@
 {
   "name": "@e11community/rollbar-dynamic-config",
-  "version": "1.0.1",
-  "description": "GitHub Action to discover microservices in a repository",
-  "main": "dist/main.js",
+  "version": "3.0.0",
+  "description": "GitHub Action to generate the dynamic portions of Rollbar configuration",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "package": "ncc build",
+    "package": "esbuild src/main.ts --bundle --platform=node --target=node22 --format=cjs --conditions=import --outfile=dist/index.js",
     "all": "npm run build && npm run package",
-    "rebuild": "([ -d ./dist ] && rm -rf ./dist); ([ -d ./node_modules ] && rm -rf ./node_modules); NPM_CONFIG_UPDATE_NOTIFIER=false npm install --no-fund && tsc -p . && ncc build"
+    "rebuild": "([ -d ./dist ] && rm -rf ./dist); ([ -d ./node_modules ] && rm -rf ./node_modules); NPM_CONFIG_UPDATE_NOTIFIER=false npm install --no-fund && npm run all"
   },
   "keywords": [
     "github-actions",
@@ -21,15 +21,15 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
-    "@actions/core": "^1.10.0",
-    "@actions/exec": "^1.1.1",
-    "@actions/github": "^6.0.1",
-    "@google-cloud/secret-manager": "^6.1.0"
+    "@actions/core": "^3.0.0",
+    "@actions/exec": "^3.0.0",
+    "@actions/github": "^9.1.0",
+    "@google-cloud/secret-manager": "^6.1.1"
   },
   "devDependencies": {
-    "@types/node": "^22.15.3",
-    "@vercel/ncc": "^0.38.0",
-    "prettier": "^3.5.3",
-    "typescript": "^5.8.3"
+    "@types/node": "^25.6.0",
+    "esbuild": "^0.28.0",
+    "prettier": "^3.8.3",
+    "typescript": "^5.9.3"
   }
 }

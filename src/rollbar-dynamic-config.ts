@@ -40,7 +40,6 @@ export async function writeDynamicConfig({
   projectId: string
   sha: string
   secretPostClientItem: string
-  secretPostServerItem: string
 }): Promise<boolean> {
   const memento = initSecrets(projectId)
   const tokenPostClientItem = await getSecretVersion(memento, secretPostClientItem)

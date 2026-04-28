@@ -12,11 +12,6 @@ inputs:
       Simple name of secret in GCP storing the post_client_item project access token
       for the project you want to emit Rollbar errors to
     required: true
-  secret_post_server_item:
-    description: >
-      Simple name of secret in GCP storing the post_server_item project access token
-      for the project you want to emit Rollbar errors to
-    required: true
 runs:
-  using: 'node20'
+  using: 'node22'
   main: 'dist/index.js'
